@@ -96,9 +96,34 @@ tdm_data <- TermDocumentMatrix(corpus_data)
 In summary, character vectors and corpuses are typically used for storing and managing raw text data. Dataframes and tibbles are used for handling structured text data, such as tokenized or sentiment data. DTMs and TDMs are matrix representations of text data used for text mining and machine learning tasks. These data structures serve different purposes in various stages of text analysis and can be transformed and used interchangeably, depending on the specific requirements of a given task. These examples illustrate the basic structure of each data type using a small text dataset. Note that some of these data types, such as corpuses, DTMs, and TDMs, rely on specific text analysis packages (e.g., tm), while others, like character vectors, dataframes, and tibbles, use base R or tidyverse functions.
 
 ## What is a package? Which packages are useful for text analysis?
-PUT INFO ABOUT PACKAGES HERE
+In R, a package is a collection of functions, data, and documentation that extends the capabilities of the base R language. Functions are pre-written pieces of code that perform specific tasks or calculations. Packages are created by the R community to solve particular problems or provide additional functionality in areas like data manipulation, visualization, and statistical modeling.
 
-Some common packages used in text analyis include:
+To find packages in R, you can:
+
+- Search the Comprehensive R Archive Network (CRAN): CRAN is the official repository for R packages. You can browse or search for packages on the [CRAN website](https://cran.r-project.org/). Most packages on CRAN come with documentation, including a description, user manual, and examples.
+
+- Use search engines: You can search for R packages using general search engines like Google or specialized search engines like [Rseek](https://rseek.org/).
+
+- Explore GitHub: Many R package developers host their code on GitHub, a platform for version control and collaboration. You can search for R packages directly on GitHub or use a search engine with "GitHub" and "R package" as keywords.
+
+To install a package in R, follow these steps:
+
+1. Open R or RStudio (a popular integrated development environment for R).
+2. Use the install.packages() function to install the package. For example, to install the "dplyr" package, you would type:
+	```
+	install.packages("dplyr")
+	```
+3. Press Enter or Return on your keyboard to execute the command. R will download and install the package from CRAN. This process might take a few moments, depending on the package size and your internet connection.
+Once the package is installed, you need to load it into your R session using the library() function. For example, to load the "dplyr" package, you would type:
+```
+library(dplyr)
+
+```
+Now you can use the functions and datasets provided by the package in your R session.
+
+Remember that package installation is a one-time process, but you'll need to load the package using library() each time you start a new R session and want to use its functions.
+
+### Some common packages used in text analyis include:
 
 - readr: A part of the tidyverse, readr provides functions for reading text files and other data formats into R. It offers better performance and more consistent behavior than base R functions. Use readr to import text data into R for analysis.
 
