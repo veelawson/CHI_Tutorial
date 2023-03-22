@@ -38,7 +38,8 @@ Plots, packages, and help: RStudio organizes other useful tools and information 
 
 To get started with RStudio, you can create a new R script (File > New File > R Script) or open an existing one. Then, you can write your R code in the source editor, and execute it by either highlighting the code and clicking the "Run" button or pressing "Ctrl + Enter" (Windows/Linux) or "Cmd + Enter" (Mac). The output will be displayed in the console, and any generated plots or visualizations will appear in the Plots tab.
 
-...
+## What is the tidyverse?
+
 # Using R
 ## How is text data structured in R?
 Document-term matrices (DTMs), term-document matrices (TDMs), tibbles, character vectors, dataframes, and corpuses are all data structures used for handling and analyzing text data in R. They have different characteristics and are suitable for various stages of text analysis. In this section, you'll find a brief description of how they relate to each other and differ from one another:
