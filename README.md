@@ -95,6 +95,34 @@ tdm_data <- TermDocumentMatrix(corpus_data)
 In summary, character vectors and corpuses are typically used for storing and managing raw text data. Dataframes and tibbles are used for handling structured text data, such as tokenized or sentiment data. DTMs and TDMs are matrix representations of text data used for text mining and machine learning tasks. These data structures serve different purposes in various stages of text analysis and can be transformed and used interchangeably, depending on the specific requirements of a given task. These examples illustrate the basic structure of each data type using a small text dataset. Note that some of these data types, such as corpuses, DTMs, and TDMs, rely on specific text analysis packages (e.g., tm), while others, like character vectors, dataframes, and tibbles, use base R or tidyverse functions.
 
 ## What is a package? Which packages are useful for text analysis?
+PUT INFO ABOUT PACKAGES HERE
+
+Some common packages used in text analyis include:
+
+- readr: A part of the tidyverse, readr provides functions for reading text files and other data formats into R. It offers better performance and more consistent behavior than base R functions. Use readr to import text data into R for analysis.
+
+- stringr: A tidyverse package that simplifies string manipulation tasks in R. It provides consistent, easy-to-use functions for common string operations like pattern matching, substring extraction, and text replacement. Use stringr for text preprocessing and cleaning.
+
+- tidytext: A package designed to work with the tidyverse ecosystem, tidytext provides functions for tokenizing, analyzing, and visualizing text data in a tidy data format. It allows you to seamlessly integrate text analysis with other tidyverse tools. Use tidytext for tokenization, sentiment analysis, and n-gram analysis in a tidy data context.
+
+- tm: A comprehensive text mining package, tm provides functions for preprocessing, managing, and analyzing text data. It supports various data structures, like corpuses, DTMs, and TDMs. Use tm for text mining tasks, such as text classification, clustering, and topic modeling.
+
+- quanteda: A powerful package for text analysis, quanteda provides tools for text preprocessing, corpus management, and text mining. It has a clean and consistent syntax, making it easy to learn and use. Use quanteda as an alternative to tm for text mining and analysis.
+
+- dplyr: A core tidyverse package, dplyr provides functions for data manipulation and transformation in a clean and consistent syntax. It works with dataframes and tibbles. Use dplyr for filtering, selecting, and transforming your text data during analysis.
+
+- tidyr: Another core tidyverse package, tidyr focuses on reshaping and cleaning data. It provides functions for converting data between long and wide formats, filling missing values, and more. Use tidyr to create and maintain tidy text data.
+
+- ggplot2: A popular data visualization package in the tidyverse, ggplot2 is based on the Grammar of Graphics. It allows you to create complex and customizable visualizations using a consistent and modular syntax. Use ggplot2 for visualizing patterns and trends in your text data.
+
+- wordcloud: A package for creating word clouds, wordcloud visualizes the frequency of words in text data by displaying words in various sizes and colors. Use wordcloud for visually exploring word frequencies in your text data.
+
+- igraph: A package for network analysis and visualization, igraph can be used to explore relationships between words, phrases, or documents in text data by creating and visualizing graphs. Use igraph to analyze and visualize relationships in your text data.
+
+- topicmodels: The topicmodels package provides functions for fitting topic models, such as Latent Dirichlet Allocation (LDA), to text data. Topic modeling is a technique used to discover underlying themes or topics within a collection of documents. You might choose this package when you want to group documents based on shared themes or extract hidden patterns within a large corpus of text.
+
+- xgboost: XGBoost is a powerful and efficient gradient boosting framework for building supervised learning models. It can be used for various tasks, including text classification and regression. You might choose to use XGBoost when you need to build a machine learning model to predict or classify text data based on features derived from the text, such as term frequencies, sentiment scores, or other numerical representations.
+
 ## How do I structure scripts in R?
 ### Structure code sequentially 
 R reads and executes code sequentially from top to bottom, line by line. Each line of code or command is executed in the order it appears in the script, and the result of each line may depend on the lines before it.
