@@ -5,41 +5,41 @@ R is a programming language and software environment for statistical computing a
 
 R is open source, which means its source code is freely available and can be modified, shared, and distributed by anyone. The R project is licensed under the GNU General Public License (GPL), which guarantees the freedom to use, study, share, and modify the software. R is developed and maintained by the R Development Core Team, a group of volunteers from around the world who contribute their time and expertise to improve and enhance the software. This team is responsible for coordinating updates, fixing bugs, and incorporating new features. R is continuously updated through new releases, with major releases happening once or twice a year. These releases often include improvements in performance, new features, and bug fixes. The R community also plays a crucial role in maintaining and updating R by contributing packages, reporting bugs, and providing suggestions for improvements.
 
-The Comprehensive R Archive Network (CRAN) is a central repository for R packages, which is also maintained by the R Development Core Team and other volunteers. CRAN provides a platform for developers to submit their packages, and it ensures that these packages are compatible with the latest version of R and pass certain quality checks. This extensive collection of packages is a major reason why R is popular for a wide range of applications, including text analysis.
+The [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) is a central repository for R packages, which is also maintained by the R Development Core Team and other volunteers. CRAN provides a platform for developers to submit their packages, and it ensures that these packages are compatible with the latest version of R and pass certain quality checks. This extensive collection of packages is a major reason why R is popular for a wide range of applications, including text analysis.
 
 
 ## Why choose R?
-Text analysis is typically conducted in either R or Python. While both R and Python are popular programming languages for data analysis, there are several reasons why someone might choose to use R for analyzing text data:
+Text analysis is typically conducted in either R or Python. While both R and Python are popular programming languages for data analysis, there are several reasons why you might choose to use R for analyzing text data:
 
-Comprehensive statistical analysis: R was originally designed for statistical analysis and has a vast array of built-in statistical functions and packages. This makes it easy for beginners to perform various statistical tests and analyses on text data.
+- Comprehensive statistical analysis: R was originally designed for statistical analysis and has a vast array of built-in statistical functions and packages. This makes it easy for beginners to perform various statistical tests and analyses on text data.
 
-User-friendly data manipulation: R's syntax is considered more readable and user-friendly for data manipulation tasks. Packages like dplyr, tidyr, and stringr in the tidyverse ecosystem make it simple for beginners to clean, reshape, and manipulate text data.
+- User-friendly data manipulation: R's syntax is considered more readable and user-friendly for data manipulation tasks. Packages like dplyr, tidyr, and stringr in the tidyverse ecosystem make it simple for beginners to clean, reshape, and manipulate text data.
 
-Visualization: R is known for its powerful visualization capabilities, especially with the ggplot2 package. It enables users to create high-quality and customizable visualizations of text data, which can be particularly helpful for understanding patterns and trends in the data.
+- Visualization: R is known for its powerful visualization capabilities, especially with the ggplot2 package. It enables users to create high-quality and customizable visualizations of text data, which can be particularly helpful for understanding patterns and trends in the data.
 
-Rich ecosystem for text analysis: R has a rich ecosystem of packages specifically designed for text analysis, such as tm, quanteda, tidytext, and many more. These packages provide a wide range of functions to preprocess, analyze, and visualize text data, making it easier for beginners to get started with text analysis in R.
+- Rich ecosystem for text analysis: R has a rich ecosystem of packages specifically designed for text analysis, such as tm, quanteda, tidytext, and many more. These packages provide a wide range of functions to preprocess, analyze, and visualize text data, making it easier for beginners to get started with text analysis in R.
 
-Community support and resources: R has a large and supportive community of users, which includes academics, statisticians, and data scientists. This means that there are plenty of resources, such as tutorials, blog posts, and forums, available for learning and troubleshooting text analysis tasks in R.
+- Community support and resources: R has a large and supportive community of users, which includes academics, statisticians, and data scientists. This means that there are plenty of resources, such as tutorials, blog posts, and forums, available for learning and troubleshooting text analysis tasks in R.
 
-Integrated development environment (IDE): RStudio, a popular IDE for R, offers a user-friendly environment with features like syntax highlighting, code completion, and integrated help, making it easier for beginners to learn and use R for text analysis.
+- Integrated development environment (IDE): RStudio, a popular IDE for R, offers a user-friendly environment with features like syntax highlighting, code completion, and integrated help, making it easier for beginners to learn and use R for text analysis.
 
 While Python is also a powerful language for text analysis with packages like NLTK, spaCy, and gensim, R offers a unique combination of statistical capabilities, user-friendly data manipulation, powerful visualization tools, and a rich ecosystem of text analysis packages. As a result, some beginners might find R more suitable for text analysis tasks.
 
 ## What is RStudio?
-RStudio is an integrated development environment (IDE) for R, which provides a user-friendly interface for writing, editing, and executing R code. RStudio makes it easy to work with R scripts, manage your data and variables, visualize your results, and install and use R packages. Here are some of the main features of RStudio that help you write and execute R scripts:
+[RStudio](https://posit.co/products/open-source/rstudio/) is an integrated development environment (IDE) for R, which provides a user-friendly interface for writing, editing, and executing R code. RStudio makes it easy to work with R scripts, manage your data and variables, visualize your results, and install and use R packages. Here are some of the main features of RStudio that help you write and execute R scripts:
 
-Source editor: RStudio provides a powerful source editor with features like syntax highlighting, code completion, and code folding. This makes writing and editing R code more efficient and enjoyable.
+- Source editor: RStudio provides a powerful source editor with features like syntax highlighting, code completion, and code folding. This makes writing and editing R code more efficient and enjoyable.
 
-Console: The console in RStudio is where you can directly type and execute R commands. It shows the output of your code and any error messages if something goes wrong.
+- Console: The console in RStudio is where you can directly type and execute R commands. It shows the output of your code and any error messages if something goes wrong.
 
-Environment and history: RStudio keeps track of your variables, functions, and data in the Environment tab. This makes it easy to see what's available in your workspace and manage your objects. The History tab shows the list of commands you've executed previously, allowing you to easily reuse or modify them.
+- Environment and history: RStudio keeps track of your variables, functions, and data in the Environment tab. This makes it easy to see what's available in your workspace and manage your objects. The History tab shows the list of commands you've executed previously, allowing you to easily reuse or modify them.
 
-Plots, packages, and help: RStudio organizes other useful tools and information in separate tabs. The Plots tab displays the visualizations you create, the Packages tab helps you manage and install R packages, and the Help tab provides access to the documentation for R functions and packages. This can be helpful when learning to use new packages!
+- Plots, packages, and help: RStudio organizes other useful tools and information in separate tabs. The Plots tab displays the visualizations you create, the Packages tab helps you manage and install R packages, and the Help tab provides access to the documentation for R functions and packages. This can be helpful when learning to use new packages!
 
 To get started with RStudio, you can create a new R script (File > New File > R Script) or open an existing one. Then, you can write your R code in the source editor, and execute it by either highlighting the code and clicking the "Run" button or pressing "Ctrl + Enter" (Windows/Linux) or "Cmd + Enter" (Mac). The output will be displayed in the console, and any generated plots or visualizations will appear in the Plots tab.
 
 ## What is the tidyverse?
-The tidyverse is a collection of R packages designed to make data science tasks easier and more efficient by providing a consistent and coherent set of tools for data manipulation, visualization, and modeling.
+The [tidyverse](https://www.tidyverse.org/) is a collection of R packages designed to make data science tasks easier and more efficient by providing a consistent and coherent set of tools for data manipulation, visualization, and modeling.
 
 To understand the tidyverse's role in text analysis, let's break it down into a few key aspects:
 
@@ -135,29 +135,27 @@ Remember that package installation is a one-time process, but you'll need to loa
 
 ### Some common packages used in text analyis include:
 
-- readr: A part of the tidyverse, readr provides functions for reading text files and other data formats into R. It offers better performance and more consistent behavior than base R functions. Use readr to import text data into R for analysis.
+- [readr](https://readr.tidyverse.org/): A part of the tidyverse, readr provides functions for reading text files and other data formats into R. It offers better performance and more consistent behavior than base R functions. Use readr to import text data into R for analysis.
 
-- stringr: A tidyverse package that simplifies string manipulation tasks in R. It provides consistent, easy-to-use functions for common string operations like pattern matching, substring extraction, and text replacement. Use stringr for text preprocessing and cleaning.
+- [stringr](https://stringr.tidyverse.org/): A tidyverse package that simplifies string manipulation tasks in R. It provides consistent, easy-to-use functions for common string operations like pattern matching, substring extraction, and text replacement. Use stringr for text preprocessing and cleaning.
 
-- tidytext: A package designed to work with the tidyverse ecosystem, tidytext provides functions for tokenizing, analyzing, and visualizing text data in a tidy data format. It allows you to seamlessly integrate text analysis with other tidyverse tools. Use tidytext for tokenization, sentiment analysis, and n-gram analysis in a tidy data context.
+- [tidytext](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html): A package designed to work with the tidyverse ecosystem, tidytext provides functions for tokenizing, analyzing, and visualizing text data in a tidy data format. It allows you to seamlessly integrate text analysis with other tidyverse tools. Use tidytext for tokenization, sentiment analysis, and n-gram analysis in a tidy data context.
 
-- tm: A comprehensive text mining package, tm provides functions for preprocessing, managing, and analyzing text data. It supports various data structures, like corpuses, DTMs, and TDMs. Use tm for text mining tasks, such as text classification, clustering, and topic modeling.
+- [tm](https://tm.r-forge.r-project.org/): A comprehensive text mining package, tm provides functions for preprocessing, managing, and analyzing text data. It supports various data structures, like corpuses, DTMs, and TDMs. Use tm for text mining tasks, such as text classification, clustering, and topic modeling.
 
-- quanteda: A powerful package for text analysis, quanteda provides tools for text preprocessing, corpus management, and text mining. It has a clean and consistent syntax, making it easy to learn and use. Use quanteda as an alternative to tm for text mining and analysis.
+- [quanteda](http://quanteda.io/): A powerful package for text analysis, quanteda provides tools for text preprocessing, corpus management, and text mining. It has a clean and consistent syntax, making it easy to learn and use. Use quanteda as an alternative to tm for text mining and analysis.
 
-- dplyr: A core tidyverse package, dplyr provides functions for data manipulation and transformation in a clean and consistent syntax. It works with dataframes and tibbles. Use dplyr for filtering, selecting, and transforming your text data during analysis.
+- [dplyr](https://dplyr.tidyverse.org/): A core tidyverse package, dplyr provides functions for data manipulation and transformation in a clean and consistent syntax. It works with dataframes and tibbles. Use dplyr for filtering, selecting, and transforming your text data during analysis.
 
-- tidyr: Another core tidyverse package, tidyr focuses on reshaping and cleaning data. It provides functions for converting data between long and wide formats, filling missing values, and more. Use tidyr to create and maintain tidy text data.
+- [tidyr](https://tidyr.tidyverse.org/): Another core tidyverse package, tidyr focuses on reshaping and cleaning data. It provides functions for converting data between long and wide formats, filling missing values, and more. Use tidyr to create and maintain tidy text data.
 
-- ggplot2: A popular data visualization package in the tidyverse, ggplot2 is based on the Grammar of Graphics. It allows you to create complex and customizable visualizations using a consistent and modular syntax. Use ggplot2 for visualizing patterns and trends in your text data.
+- [ggplot2](https://ggplot2.tidyverse.org/): A popular data visualization package in the tidyverse, ggplot2 is based on the Grammar of Graphics. It allows you to create complex and customizable visualizations using a consistent and modular syntax. Use ggplot2 for visualizing patterns and trends in your text data.
 
-- wordcloud: A package for creating word clouds, wordcloud visualizes the frequency of words in text data by displaying words in various sizes and colors. Use wordcloud for visually exploring word frequencies in your text data.
+- [wordcloud](https://cran.r-project.org/web/packages/wordcloud/wordcloud.pdf): A package for creating word clouds, wordcloud visualizes the frequency of words in text data by displaying words in various sizes and colors. Use wordcloud for visually exploring word frequencies in your text data.
 
-- igraph: A package for network analysis and visualization, igraph can be used to explore relationships between words, phrases, or documents in text data by creating and visualizing graphs. Use igraph to analyze and visualize relationships in your text data.
+- [igraph](https://r.igraph.org/): A package for network analysis and visualization, igraph can be used to explore relationships between words, phrases, or documents in text data by creating and visualizing graphs. Use igraph to analyze and visualize relationships in your text data.
 
-- topicmodels: The topicmodels package provides functions for fitting topic models, such as Latent Dirichlet Allocation (LDA), to text data. Topic modeling is a technique used to discover underlying themes or topics within a collection of documents. You might choose this package when you want to group documents based on shared themes or extract hidden patterns within a large corpus of text.
-
-- xgboost: XGBoost is a powerful and efficient gradient boosting framework for building supervised learning models. It can be used for various tasks, including text classification and regression. You might choose to use XGBoost when you need to build a machine learning model to predict or classify text data based on features derived from the text, such as term frequencies, sentiment scores, or other numerical representations.
+- [topicmodels](https://cran.r-project.org/web/packages/topicmodels/topicmodels.pdf): The topicmodels package provides functions for fitting topic models, such as Latent Dirichlet Allocation (LDA), to text data. Topic modeling is a technique used to discover underlying themes or topics within a collection of documents. You might choose this package when you want to group documents based on shared themes or extract hidden patterns within a large corpus of text.
 
 ## How do I structure scripts in R?
 ### Structure code sequentially 
