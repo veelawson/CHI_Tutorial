@@ -46,51 +46,51 @@ Document-term matrices (DTMs), term-document matrices (TDMs), tibbles, character
 
 Character vectors: A character vector is a one-dimensional array of character strings in R. It can be used to store raw text data, such as individual sentences or documents. Character vectors serve as the basic building blocks for more complex data structures like corpuses and dataframes.
 ```
-text_data <- c("The quick brown fox jumps over the lazy dog.",
-               "The early bird catches the worm.",
-               "A stitch in time saves nine.")
+	text_data <- c("The quick brown fox jumps over the lazy dog.",
+		       "The early bird catches the worm.",
+		       "A stitch in time saves nine.")
 ```
 
 Corpuses: A corpus is a collection of text documents, usually stored as a list of character vectors or a specialized data structure provided by text analysis packages like quanteda. A corpus is useful for storing and managing large volumes of text data before preprocessing and transforming it into more structured formats like DTMs, TDMs, or tibbles.
 ```
-# Using the tm package, we can create a corpus from the character vector.
-library(tm)
+	# Using the tm package, we can create a corpus from the character vector.
+	library(tm)
 
-corpus_data <- VCorpus(VectorSource(text_data))
+	corpus_data <- VCorpus(VectorSource(text_data))
 ```
 
 Dataframes: A dataframe is a two-dimensional, tabular data structure in R that can store columns of different data types. It is a versatile and commonly used data structure for data manipulation and analysis. When working with text data, dataframes can be used to store tokenized or sentiment data. However, tibbles are a more modern and preferred alternative to dataframes within the tidyverse ecosystem.
 ```
-# A dataframe example with tokenized text data:
-tokenized_data <- data.frame(Document = c(1, 1, 1, 2, 2, 3, 3),
-                             Token = c("The", "quick", "brown", "The", "early", "A", "stitch"))
+	# A dataframe example with tokenized text data:
+	tokenized_data <- data.frame(Document = c(1, 1, 1, 2, 2, 3, 3),
+				     Token = c("The", "quick", "brown", "The", "early", "A", "stitch"))
 ```
 
 Tibbles: Different from the adorable but proliferative [tribble](http://memory-alpha.wikia.com/wiki/Tribble), a tibble is a modern data frame format in R, specifically designed to work within the tidyverse ecosystem. Tibbles offer improved printing and subsetting capabilities compared to traditional dataframes. Tibbles can be used to store and manipulate tokenized text data or sentiment data, making them suitable for text analysis tasks in the tidyverse context.
 ```
-# Creating a tibble with tokenized text data using the tibble package:
-library(tibble)
+	# Creating a tibble with tokenized text data using the tibble package:
+	library(tibble)
 
-tokenized_tibble <- tibble(Document = c(1, 1, 1, 2, 2, 3, 3),
-                           Token = c("The", "quick", "brown", "The", "early", "A", "stitch"))
+	tokenized_tibble <- tibble(Document = c(1, 1, 1, 2, 2, 3, 3),
+				   Token = c("The", "quick", "brown", "The", "early", "A", "stitch"))
 ```
 
 Document-term matrices (DTMs): A DTM is a matrix representation of text data, where each row represents a document, and each column represents a term (word). The elements in the matrix indicate the frequency of terms in the documents. DTMs are useful for text mining, information retrieval, and machine learning tasks that require a structured representation of text data. They are often derived from corpuses or dataframes/tibbles containing tokenized data.
 ```
-# Creating a DTM from the character vector using the tm package:
-library(tm)
+	# Creating a DTM from the character vector using the tm package:
+	library(tm)
 
-corpus_data <- VCorpus(VectorSource(text_data))
-dtm_data <- DocumentTermMatrix(corpus_data)
+	corpus_data <- VCorpus(VectorSource(text_data))
+	dtm_data <- DocumentTermMatrix(corpus_data)
 ```
 
 Term-document matrices (TDMs): A TDM is the transpose of a DTM, with each row representing a term and each column representing a document. TDMs are used for similar purposes as DTMs but can be more efficient for certain operations, such as calculating term frequencies across documents.
 ```
-# Creating a TDM from the character vector using the tm package:
-library(tm)
+	# Creating a TDM from the character vector using the tm package:
+	library(tm)
 
-corpus_data <- VCorpus(VectorSource(text_data))
-tdm_data <- TermDocumentMatrix(corpus_data)
+	corpus_data <- VCorpus(VectorSource(text_data))
+	tdm_data <- TermDocumentMatrix(corpus_data)
 ```
 
 In summary, character vectors and corpuses are typically used for storing and managing raw text data. Dataframes and tibbles are used for handling structured text data, such as tokenized or sentiment data. DTMs and TDMs are matrix representations of text data used for text mining and machine learning tasks. These data structures serve different purposes in various stages of text analysis and can be transformed and used interchangeably, depending on the specific requirements of a given task. These examples illustrate the basic structure of each data type using a small text dataset. Note that some of these data types, such as corpuses, DTMs, and TDMs, rely on specific text analysis packages (e.g., tm), while others, like character vectors, dataframes, and tibbles, use base R or tidyverse functions.
@@ -104,21 +104,20 @@ To find packages in R, you can:
 
 - Use search engines: You can search for R packages using general search engines like Google or specialized search engines like [Rseek](https://rseek.org/).
 
-- Explore GitHub: Many R package developers host their code on GitHub, a platform for version control and collaboration. You can search for R packages directly on GitHub or use a search engine with "GitHub" and "R package" as keywords.
+- Explore GitHub: Many R package developers host their code here on GitHub!
 
 To install a package in R, follow these steps:
 
-1. Open R or RStudio (a popular integrated development environment for R).
+1. Open R or RStudio.
 2. Use the install.packages() function to install the package. For example, to install the "dplyr" package, you would type:
 	```
 	install.packages("dplyr")
 	```
 3. Press Enter or Return on your keyboard to execute the command. R will download and install the package from CRAN. This process might take a few moments, depending on the package size and your internet connection.
 Once the package is installed, you need to load it into your R session using the library() function. For example, to load the "dplyr" package, you would type:
-```
-library(dplyr)
-
-```
+	```
+	library(dplyr)
+	```
 Now you can use the functions and datasets provided by the package in your R session.
 
 Remember that package installation is a one-time process, but you'll need to load the package using library() each time you start a new R session and want to use its functions.
@@ -157,19 +156,19 @@ This sequential execution is important to remember when writing R code, as the o
 
 Here's a simple example to illustrate how R reads code:
 ```
-# Step 1: Load the 'stringr' library for text manipulation
-library(stringr)
+	# Step 1: Load the 'stringr' library for text manipulation
+	library(stringr)
 
-# Step 2: Assign a character vector containing sentences to the variable 'text_data'
-text_data <- c("The quick brown fox jumps over the lazy dog.",
-               "The early bird catches the worm.",
-               "A stitch in time saves nine.")
+	# Step 2: Assign a character vector containing sentences to the variable 'text_data'
+	text_data <- c("The quick brown fox jumps over the lazy dog.",
+		       "The early bird catches the worm.",
+		       "A stitch in time saves nine.")
 
-# Step 3: Assign the result of a function (convert text_data to lowercase) to the variable 'lowercase_text'
-lowercase_text <- str_to_lower(text_data)
+	# Step 3: Assign the result of a function (convert text_data to lowercase) to the variable 'lowercase_text'
+	lowercase_text <- str_to_lower(text_data)
 
-# Step 4: Print the 'lowercase_text' variable
-print(lowercase_text)
+	# Step 4: Print the 'lowercase_text' variable
+	print(lowercase_text)
 ```
 In this example, R reads the code from top to bottom. It first loads the stringr library, then creates the text_data variable, converts the text data to lowercase and assigns it to the lowercase_text variable, and finally prints the lowercase_text variable.
 
@@ -178,19 +177,19 @@ In R, the <- symbol is known as the assignment operator. It is used to assign a 
 
 Using the assignment operator, you can create and assign values to variables in your R code. Here's a simple example to illustrate how the assignment operator works:
 ```
-# Assign a character vector containing sentences to the variable 'text_data'
-text_data <- c("The quick brown fox jumps over the lazy dog.",
-               "The early bird catches the worm.",
-               "A stitch in time saves nine.")
+	# Assign a character vector containing sentences to the variable 'text_data'
+	text_data <- c("The quick brown fox jumps over the lazy dog.",
+		       "The early bird catches the worm.",
+		       "A stitch in time saves nine.")
 
-# Load the 'stringr' library for text manipulation
-library(stringr)
+	# Load the 'stringr' library for text manipulation
+	library(stringr)
 
-# Assign the result of a function (convert text_data to lowercase) to the variable 'lowercase_text'
-lowercase_text <- str_to_lower(text_data)
+	# Assign the result of a function (convert text_data to lowercase) to the variable 'lowercase_text'
+	lowercase_text <- str_to_lower(text_data)
 
-# Print the 'lowercase_text' variable
-print(lowercase_text)
+	# Print the 'lowercase_text' variable
+	print(lowercase_text)
 ```
 In this example, we used the assignment operator <- to create variables for storing the original text data and the result of a text processing function (converting the text to lowercase).
 
@@ -207,23 +206,23 @@ Suppose you have a character vector text_data containing sentences, and you want
 
 Without the pipe operator, you would nest the functions like this:
 ```
-library(stringr)
+	library(stringr)
 
-text_data <- c("The quick brown fox jumps over the lazy dog.",
-               "The early bird catches the worm.",
-               "A stitch in time saves nine.")
+	text_data <- c("The quick brown fox jumps over the lazy dog.",
+		       "The early bird catches the worm.",
+		       "A stitch in time saves nine.")
 
-cleaned_data <- str_split(str_replace_all(str_to_lower(text_data), "[^a-zA-Z\\s]", ""), "\\s+")
+	cleaned_data <- str_split(str_replace_all(str_to_lower(text_data), "[^a-zA-Z\\s]", ""), "\\s+")
 ```
 With the pipe operator, you can rewrite the code in a more readable way:
 ```
-library(stringr)
-library(magrittr) # Load the magrittr package for the pipe operator
+	library(stringr)
+	library(magrittr) # Load the magrittr package for the pipe operator
 
-cleaned_data <- text_data %>%
-  str_to_lower() %>%
-  str_replace_all("[^a-zA-Z\\s]", "") %>%
-  str_split("\\s+")
+	cleaned_data <- text_data %>%
+	  str_to_lower() %>%
+	  str_replace_all("[^a-zA-Z\\s]", "") %>%
+	  str_split("\\s+")
 ```
 In this example, the pipe operator %>% helps to chain the text preprocessing operations in a sequential manner, making the code easier to read and understand. Note that if you are using the tidyverse, the pipe operator is already included, so you don't need to load the magrittr package separately!
 
@@ -232,69 +231,69 @@ Formatting code in R involves writing your code in a clean, consistent, and read
 
 - Indentation: Use consistent indentation (2 or 4 spaces are common) to make your code easier to read. Do not mix spaces and tabs for indentation.
 ```
-# Good
-text_data <- c("The quick brown fox jumps over the lazy dog.",
-               "The early bird catches the worm.",
-               "A stitch in time saves nine.")
+	# Good
+	text_data <- c("The quick brown fox jumps over the lazy dog.",
+		       "The early bird catches the worm.",
+		       "A stitch in time saves nine.")
 
-# Bad (inconsistent indentation)
-text_data<-c("The quick brown fox jumps over the lazy dog.",
-          "The early bird catches the worm.",
-  "A stitch in time saves nine.")
+	# Bad (inconsistent indentation)
+	text_data<-c("The quick brown fox jumps over the lazy dog.",
+		  "The early bird catches the worm.",
+	  "A stitch in time saves nine.")
 ```
 - Spacing: Use spaces around operators, commas, and parentheses for better readability.
 ```
-# Good
-cleaned_data <- text_data %>%
-  str_to_lower() %>%
-  str_replace_all("[^a-zA-Z\\s]", "") %>%
-  str_split("\\s+")
+	# Good
+	cleaned_data <- text_data %>%
+	  str_to_lower() %>%
+	  str_replace_all("[^a-zA-Z\\s]", "") %>%
+	  str_split("\\s+")
 
-# Bad (lack of spaces)
-cleaned_data<-text_data%>%
-  str_to_lower()%>%
-  str_replace_all("[^a-zA-Z\\s]","")%>%
-  str_split("\\s+")
+	# Bad (lack of spaces)
+	cleaned_data<-text_data%>%
+	  str_to_lower()%>%
+	  str_replace_all("[^a-zA-Z\\s]","")%>%
+	  str_split("\\s+")
 ```
 - Line length: Keep your code lines reasonably short (around 80 characters) to make it easier to read and avoid horizontal scrolling.
 ```
-# Good
-cleaned_data <- text_data %>%
-  str_to_lower() %>%
-  str_replace_all("[^a-zA-Z\\s]", "") %>%
-  str_split("\\s+")
+	# Good
+	cleaned_data <- text_data %>%
+	  str_to_lower() %>%
+	  str_replace_all("[^a-zA-Z\\s]", "") %>%
+	  str_split("\\s+")
 
-# Bad (long lines)
-cleaned_data <- text_data %>% str_to_lower() %>% str_replace_all("[^a-zA-Z\\s]", "") %>% str_split("\\s+")
+	# Bad (long lines)
+	cleaned_data <- text_data %>% str_to_lower() %>% str_replace_all("[^a-zA-Z\\s]", "") %>% str_split("\\s+")
 ```
 - Variable and function names: Use meaningful and consistent naming conventions for your variables and functions. In R, it's common to use lowercase words separated by underscores (snake_case) for variable and function names.
 ```
 # Good
-word_count <- function(text) {
-  tokenized_text <- str_split(text, "\\s+")
-  length(tokenized_text[[1]])
-}
+	word_count <- function(text) {
+	  tokenized_text <- str_split(text, "\\s+")
+	  length(tokenized_text[[1]])
+	}
 
-# Bad (inconsistent and unclear naming)
-WordCount <- function(t) {
-  tokenizedText <- str_split(t, "\\s+")
-  length(tokenizedText[[1]])
-}
+	# Bad (inconsistent and unclear naming)
+	WordCount <- function(t) {
+	  tokenizedText <- str_split(t, "\\s+")
+	  length(tokenizedText[[1]])
+	}
 ```
 - Comments: Use comments to explain your code and make it more understandable. Start comments with the # symbol, followed by a space.
 ```
-# Good
-# Count the number of words in a given text
-word_count <- function(text) {
-  tokenized_text <- str_split(text, "\\s+")
-  length(tokenized_text[[1]])
-}
+	# Good
+	# Count the number of words in a given text
+	word_count <- function(text) {
+	  tokenized_text <- str_split(text, "\\s+")
+	  length(tokenized_text[[1]])
+	}
 
-# Bad (lack of comments)
-word_count <- function(text) {
-  tokenized_text <- str_split(text, "\\s+")
-  length(tokenized_text[[1]])
-}
+	# Bad (lack of comments)
+	word_count <- function(text) {
+	  tokenized_text <- str_split(text, "\\s+")
+	  length(tokenized_text[[1]])
+	}
 ```
 # Topic Modeling in R
 ## What is topic modeling?
