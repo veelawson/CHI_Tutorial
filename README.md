@@ -157,7 +157,7 @@ Remember that package installation is a one-time process, but you'll need to loa
 
 - [topicmodels](https://cran.r-project.org/web/packages/topicmodels/topicmodels.pdf): The topicmodels package provides functions for fitting topic models, such as Latent Dirichlet Allocation (LDA), to text data. Topic modeling is a technique used to discover underlying themes or topics within a collection of documents. You might choose this package when you want to group documents based on shared themes or extract hidden patterns within a large corpus of text.
 
-## How do I structure scripts in R?
+## How do I write code in R?
 ### Structure code sequentially 
 R reads and executes code sequentially from top to bottom, line by line. Each line of code or command is executed in the order it appears in the script, and the result of each line may depend on the lines before it.
 
@@ -392,3 +392,100 @@ The evaluation of computational topic modeling results in the humanities is stil
 
 For humanists, especially researchers integrating computational topic modeling into a mixed qualitative and quantitative methodology, it may be more fruitful to use these measures as guidelines but to rely on domain knowledge and prioritize interpretability to a human reader. 
 
+# A Sample Script
+In this example, we'll create an LDA workflow in R, starting with importing a .csv file and ending with visualizing the topics using a stacked bar chart and word clouds. We'll also assess the model's coherence and perplexity.
+
+First, install and load the required packages:
+```
+	install.packages(c("topicmodels", "tidytext", "tm", "tidyverse", "textmineR", "wordcloud", "gridExtra"))
+	library(topicmodels)
+	library(tidytext)
+	library(tm)
+	library(tidyverse)
+	library(textmineR)
+	library(wordcloud)
+	library(gridExtra)
+```
+Next, import the .csv file and prepare the data:
+```
+	# Read the .csv file
+	data <- read_csv("your_file.csv")
+
+	# Create a Corpus from the 'text' column
+	corpus <- VCorpus(VectorSource(data$text))
+
+	# Preprocess the text (e.g., remove stopwords, convert to lowercase, etc.)
+	clean_corpus <- tm_map(corpus, content_transformer(tolower))
+	clean_corpus <- tm_map(clean_corpus, removePunctuation)
+	clean_corpus <- tm_map(clean_corpus, removeNumbers)
+	clean_corpus <- tm_map(clean_corpus, removeWords, stopwords("english"))
+	clean_corpus <- tm_map(clean_corpus, stripWhitespace)
+
+	# Create a Document-Term Matrix (DTM) from the preprocessed text
+	dtm <- DocumentTermMatrix(clean_corpus, control = list(wordLengths = c(3, Inf)))
+
+```
+Now, split the data into a training set and a test set:
+```
+	set.seed(123)
+	train_indices <- sample(seq_len(dtm$nrow), size = floor(0.8 * dtm$nrow))
+	train_data <- dtm[train_indices, ]
+	test_data <- dtm[-train_indices, ]
+
+```
+Fit an LDA model on the training data:
+```
+	lda_model <- LDA(train_data, k = 10, control = list(seed = 123))
+
+```
+Calculate perplexity for the test set:
+```
+	perplexity_score <- perplexity(lda_model, newdata = test_data)
+
+```
+Compute coherence scores:
+```
+	coherence_scores <- widely_applicable_information_criterion(
+	  dtm = train_data,
+	  phi = lda_model@beta,
+	  top_n = 10,
+	  M = 10
+	)
+
+```
+Visualize the resulting topics and their top words using a stacked bar chart:
+```
+	# Extract the top words for each topic
+	top_terms <- tidy(lda_model, matrix = "beta") %>%
+	  group_by(topic) %>%
+	  top_n(10, beta) %>%
+	  ungroup()
+
+	# Create a stacked bar chart of topics and their top words
+	top_terms %>%
+	  mutate(term = reorder_within(term, beta, topic)) %>%
+	  ggplot(aes(term, beta, fill = factor(topic), reorder = TRUE)) +
+	  geom_col(show.legend = FALSE) +
+	  facet_wrap(~topic, scales = "free", ncol = 2) +
+	  coord_flip() +
+	  scale_x_reordered() +
+	  labs(x = "Top words", y = "Beta")
+
+```
+Create word clouds for each topic:
+```
+	# Create a list of word clouds, one for each topic
+	word_clouds <- lapply(1:10, function(topic) {
+	  term_probs <- top_terms %>%
+	    filter(topic == topic) %>%
+	    arrange(desc(beta)) %>%
+	    mutate(term = reorder(term, beta))
+
+	  wc <- wordcloud(
+	    words = term_probs$term,
+	    freq = term_probs$beta,
+	    random.order = FALSE,
+	    colors = brewer.pal(6, "Dark2"), # You can change the color palette by installing and loading different color libraries, like [wesanderson](https://github.com/karthik/wesanderson)
+	    plot = FALSE
+
+```
