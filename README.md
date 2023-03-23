@@ -309,21 +309,38 @@ Formatting code in R involves writing your code in a clean, consistent, and read
 
 Topic modeling is a technique in natural language processing (NLP) that aims to discover hidden themes or "topics" within a large collection of documents. The idea is to uncover the underlying structure of the documents by identifying patterns in the words they contain. Topic modeling can help you understand and organize large amounts of text data, such as news articles, research papers, or social media posts.
 
-Latent Dirichlet Allocation (LDA) is a popular topic modeling algorithm that works on the assumption that each document is a mixture of several topics, and each topic is a collection of related words. In LDA, the topics are "latent" or hidden variables that the algorithm tries to discover based on the distribution of words in the documents.
+Among computational topic models, Latent Dirichlet Allocation (LDA) is a popular algorithm that works on the assumption that each document is a mixture of several topics, and each topic is a collection of related words. In LDA, the topics are "latent" or hidden variables that the algorithm tries to discover based on the distribution of words in the documents.
 
 Here's a simple overview of how LDA works:
 
-You decide on the number of topics you want the algorithm to discover (let's say, K topics).
+1. You decide on the number of topics you want the algorithm to discover (let's say, K topics).
 
-The algorithm randomly assigns each word in each document to one of the K topics.
+2. The algorithm randomly assigns each word in each document to one of the K topics.
 
-Then, it iteratively refines these assignments by considering two factors:
-a. How prevalent each topic is across all documents (i.e., how many documents contain a particular topic).
-b. How likely each word is to belong to a specific topic (i.e., how often a word appears in a topic across all documents).
+3. Then, it iteratively refines these assignments by considering two factors:
+	a. How prevalent each topic is across all documents (i.e., how many documents contain a particular topic).
+	b. How likely each word is to belong to a specific topic (i.e., how often a word appears in a topic across all documents).
 
-The algorithm continues to refine the topic-word assignments until it reaches a stable state or a predefined number of iterations.
+4. The algorithm continues to refine the topic-word assignments until it reaches a stable state or a predefined number of iterations.
 
-Finally, LDA provides two key outputs: the distribution of topics across documents and the distribution of words within each topic.
+5. Finally, LDA provides two key outputs: the distribution of topics across documents and the distribution of words within each topic.
+
+On a more detailed level, LDA uses three parameters to control the behavior of the algorithm and influence the results. These parameters are:
+
+- Number of topics (K): This parameter determines how many topics the LDA algorithm will attempt to discover in the document collection. Choosing the right number of topics is crucial, as it can affect the quality and interpretability of the results. Too few topics might lead to broad, overlapping themes, while too many topics might result in overly specific or fragmented themes. There is no one-size-fits-all approach to selecting the number of topics, and it often requires trial and error, domain knowledge, or evaluation methods like coherence scores or perplexity.
+
+- Alpha (α): This parameter influences the distribution of topics across documents. In LDA, each document is assumed to be a mixture of topics, and alpha determines how "concentrated" or "diverse" the topic mixture is for each document. A low alpha value will result in documents dominated by a small number of topics, while a high alpha value will lead to a more uniform distribution of topics across documents. The optimal alpha value depends on the specific dataset and research question; it may require experimentation or tuning to achieve the best results.
+
+- Beta (β): This parameter affects the distribution of words within each topic. Beta determines how "concentrated" or "diverse" the word distribution is for each topic. A low beta value will result in topics with a few dominant words, while a high beta value will lead to more evenly distributed words within topics. Similar to alpha, the optimal beta value depends on the dataset and the desired level of word specificity within each topic.
+
+In practice, LDA implementations often set default values for alpha and beta (for example, 50/K for alpha and 0.1 for beta). These default values may work well for some datasets, but it's important to remember that adjusting these parameters can have a significant impact on the quality and interpretability of the results. Experimenting with different parameter values and evaluating the output can help you find the best configuration for your specific use case.
+
+The evaluation of computational topic modeling results in the humanities is still a developing area of research. In more data-driven fields, two measures are often used to assess the model's results: 
+- Coherence scores: A coherence score measures how semantically related the top words within a topic are. A higher coherence score indicates that the words in a topic are more likely to appear together in the same context, suggesting a more meaningful and interpretable topic. Coherence scores are often calculated using word co-occurrence statistics, like pointwise mutual information (PMI) or term frequency-inverse document frequency (TF-IDF).
+
+- Perplexity: Perplexity measures how well a topic model predicts the words in a held-out set of documents (usually a test set). A lower perplexity score indicates that the model is better at predicting the words in the test set, suggesting a better fit to the data. However, perplexity is not always a good indicator of the interpretability or meaningfulness of the topics.
+
+For humanists, especially researchers integrating computational topic modeling into a mixed qualitative and quantitative methodology, it may be more fruitful to use these measures as guidelines but to rely on domain knowledge and prioritize interpretability to a human reader.
 
 ## What are some common issues I might encounter when working with social media text?
 ## A topic modeling workflow
