@@ -390,5 +390,5 @@ The evaluation of computational topic modeling results in the humanities is stil
 
 - Perplexity: Perplexity measures how well a topic model predicts the words in a held-out set of documents (usually a test set). A lower perplexity score indicates that the model is better at predicting the words in the test set, suggesting a better fit to the data. However, perplexity is not always a good indicator of the interpretability or meaningfulness of the topics.
 
-For humanists, especially researchers integrating computational topic modeling into a mixed qualitative and quantitative methodology, it may be more fruitful to use these measures as guidelines but to rely on domain knowledge and prioritize interpretability to a human reader.
+For humanists, especially researchers integrating computational topic modeling into a mixed qualitative and quantitative methodology, it may be more fruitful to use these measures as guidelines but to rely on domain knowledge and prioritize interpretability to a human reader. 
 
