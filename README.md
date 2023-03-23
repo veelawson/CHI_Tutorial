@@ -306,5 +306,24 @@ Formatting code in R involves writing your code in a clean, consistent, and read
 ```
 # Topic Modeling in R
 ## What is topic modeling?
+
+Topic modeling is a technique in natural language processing (NLP) that aims to discover hidden themes or "topics" within a large collection of documents. The idea is to uncover the underlying structure of the documents by identifying patterns in the words they contain. Topic modeling can help you understand and organize large amounts of text data, such as news articles, research papers, or social media posts.
+
+Latent Dirichlet Allocation (LDA) is a popular topic modeling algorithm that works on the assumption that each document is a mixture of several topics, and each topic is a collection of related words. In LDA, the topics are "latent" or hidden variables that the algorithm tries to discover based on the distribution of words in the documents.
+
+Here's a simple overview of how LDA works:
+
+You decide on the number of topics you want the algorithm to discover (let's say, K topics).
+
+The algorithm randomly assigns each word in each document to one of the K topics.
+
+Then, it iteratively refines these assignments by considering two factors:
+a. How prevalent each topic is across all documents (i.e., how many documents contain a particular topic).
+b. How likely each word is to belong to a specific topic (i.e., how often a word appears in a topic across all documents).
+
+The algorithm continues to refine the topic-word assignments until it reaches a stable state or a predefined number of iterations.
+
+Finally, LDA provides two key outputs: the distribution of topics across documents and the distribution of words within each topic.
+
 ## What are some common issues I might encounter when working with social media text?
 ## A topic modeling workflow
