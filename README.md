@@ -335,6 +335,56 @@ On a more detailed level, LDA uses three parameters to control the behavior of t
 
 In practice, LDA implementations often set default values for alpha and beta (for example, 50/K for alpha and 0.1 for beta). These default values may work well for some datasets, but it's important to remember that adjusting these parameters can have a significant impact on the quality and interpretability of the results. Experimenting with different parameter values and evaluating the output can help you find the best configuration for your specific use case.
 
+## What are some common issues I might encounter when working with social media text?
+When working with unconventional text data in R, especially data scraped from social media, you might encounter several common issues. 
+
+- Encoding issues: Social media data may contain various character encodings, special characters, or emojis, which might cause issues when loading or processing the data in R. Ensure that you correctly handle encoding and properly convert the text data to a consistent format, such as UTF-8. You can use the iconv() function or the stringi package to convert encodings.
+
+- Incomplete or messy data: Social media data can be noisy, containing incomplete sentences, misspellings, slang, or abbreviations. Clean and preprocess the text data by removing unnecessary elements (e.g., URLs, mentions, special characters), expanding abbreviations, and correcting misspellings. See the next section for more details on this process!
+
+- Handling multi-language data: Social media data may contain text in multiple languages, which can be challenging to analyze and process. Detect and separate the data by language using packages like textcat, cld2, or cld3. Then, preprocess and analyze each language separately using appropriate tools and resources, such as language-specific stopword lists and stemming algorithms.
+
+Large datasets: Social media data can be vast, making it challenging to manage and process using conventional methods. Use efficient data manipulation packages like dplyr or data.table for handling large datasets. 
+
+Informal language and context-specific terms: Social media content often contains informal language, slang, and context-specific terms that may not be found in standard language resources like dictionaries or sentiment lexicons. Create custom dictionaries, lists, or lexicons tailored to the specific context or domain of your data. You can manually curate these resources or use techniques like word embeddings or unsupervised learning algorithms to discover and group similar terms.
+
+## A topic modeling workflow for social media texts
+### Scrape texts
+### Clean and preprocess the dataset
+Data cleaning, also known as data preprocessing or data wrangling, is the process of preparing and transforming raw data into a more structured, consistent, and usable format. This step is essential in any data analysis project, as it ensures the data is accurate, reliable, and suitable for the desired analysis or modeling techniques. For text data, this may include: 
+
+- Removing duplicates: Sometimes, datasets contain duplicate entries or records. These duplicates can distort the analysis results and lead to incorrect conclusions. Data cleaning involves identifying and removing duplicate records to ensure the dataset's integrity.
+
+- Handling missing values: In real-world datasets, it's common to encounter missing or incomplete data. Data cleaning involves addressing these missing values, either by filling them in with appropriate estimates (e.g., mean, median, or mode), or by removing the records with missing data if they are not critical to the analysis.
+
+- Correcting inconsistencies: Datasets may contain inconsistencies, such as variations in how data is entered or recorded (e.g., different date formats, spelling variations, or units of measurement). Data cleaning aims to standardize these inconsistencies to ensure the data is uniform and comparable.
+
+- Fixing errors and typos: Data may contain errors or typos, such as incorrect data entries or misspelled words. Data cleaning involves identifying and correcting these errors to improve the dataset's accuracy and reliability.
+
+- Filtering and selecting relevant data: In some cases, datasets may contain irrelevant, redundant, or unnecessary information that doesn't contribute to the analysis. Data cleaning involves filtering and selecting the relevant data that aligns with the research questions or objectives.
+
+- Transforming data: Sometimes, data needs to be transformed or converted into a different format or structure to be compatible with specific analysis techniques or tools. Data cleaning may involve reorganizing, aggregating, or normalizing the data to prepare it for further analysis.
+
+### Fit and train your model
+Fitting a model on training data is an essential step in the process of building and evaluating machine learning models, including topic models like Latent Dirichlet Allocation (LDA). The main reason for using training data is to avoid overfitting and to ensure that the model generalizes well to new, unseen data.
+
+Overfitting occurs when a model learns to perform very well on the data it was trained on but performs poorly on new, unseen data. This is because the model has learned the specific characteristics or noise in the training data instead of the underlying patterns that generalize to new data. 
+
+Generalization is the ability of a model to perform well on new, unseen data. By fitting the model on training data and evaluating it on separate test data, you can assess how well the model generalizes to new examples. This is crucial because, in practice, you'll want your model to make accurate predictions or provide meaningful insights when analyzing data it hasn't encountered before.
+
+Fitting a model on training data and evaluating it on test data allows you to measure its performance using various metrics, such as coherence scores or perplexity for topic models. This can help you compare different models, adjust parameters, or select the best model for your specific use case.
+
+However, in some cases, a researcher might decide not to split their data into training and test sets, especially when working with a collection of short social media text, for the following reasons:
+
+- Limited data: Social media posts are typically short, and the total amount of available data might be limited. Splitting the data into training and test sets can further reduce the data available for model training. In such cases, researchers might choose to use all available data for model training to maximize the information the model can learn from.
+
+- Interpretability: When working with social media text, the primary goal might be to explore and understand the underlying themes or topics, rather than accurately predicting new data. In this case, researchers might prioritize model interpretability and meaningfulness over strictly measuring its predictive performance.
+
+- Noisy data: Social media text often contains a lot of noise, like slang, abbreviations, and typos. In such situations, the traditional training-test split approach might not be as effective, as the model could struggle to learn meaningful patterns from the noisy data. Researchers might instead focus on cleaning and preprocessing the text to improve the quality of the data before fitting the model.
+
+That said, it's important to note that not using training data to fit the model comes with its risks. Without a separate test set, it's more challenging to assess the model's ability to generalize to unseen data and avoid overfitting. Researchers should carefully weigh the pros and cons of not using a training-test split, considering the specific goals of their analysis and the characteristics of the social media text they are working with.
+
+### Assess and interpret results
 The evaluation of computational topic modeling results in the humanities is still a developing area of research. In more data-driven fields, two measures are often used to assess the model's results: 
 - Coherence scores: A coherence score measures how semantically related the top words within a topic are. A higher coherence score indicates that the words in a topic are more likely to appear together in the same context, suggesting a more meaningful and interpretable topic. Coherence scores are often calculated using word co-occurrence statistics, like pointwise mutual information (PMI) or term frequency-inverse document frequency (TF-IDF).
 
@@ -342,5 +392,3 @@ The evaluation of computational topic modeling results in the humanities is stil
 
 For humanists, especially researchers integrating computational topic modeling into a mixed qualitative and quantitative methodology, it may be more fruitful to use these measures as guidelines but to rely on domain knowledge and prioritize interpretability to a human reader.
 
-## What are some common issues I might encounter when working with social media text?
-## A topic modeling workflow
