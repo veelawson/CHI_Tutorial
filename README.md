@@ -485,7 +485,8 @@ Create word clouds for each topic:
 	    words = term_probs$term,
 	    freq = term_probs$beta,
 	    random.order = FALSE,
-	    colors = brewer.pal(6, "Dark2"), # You can change the color palette by installing and loading different color libraries, like [wesanderson](https://github.com/karthik/wesanderson)
+	    colors = brewer.pal(6, "Dark2"), 
 	    plot = FALSE
 
 ```
+You can change the color palette of your wordclouds by installing and loading different color libraries, like [wesanderson](https://github.com/karthik/wesanderson)!
